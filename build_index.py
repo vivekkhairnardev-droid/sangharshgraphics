@@ -53,6 +53,19 @@ works_json = json.dumps(works, ensure_ascii=False, indent=1)
 style_end = orig.find('</style>')
 pre_style = orig[:style_end]
 
+# Inject favicon tags if not already present
+favicon_tags = """<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<meta name="theme-color" content="#D81F26">
+"""
+if '<link rel="icon"' not in pre_style:
+    style_idx = pre_style.find('<style>')
+    if style_idx != -1:
+        pre_style = pre_style[:style_idx] + favicon_tags + pre_style[style_idx:]
+
 extra_css = """
 .cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
 .catcard{display:block;text-decoration:none;color:inherit;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
