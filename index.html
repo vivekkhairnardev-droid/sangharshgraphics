@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sangharsh Graphics – Graphic Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F6F2;--ink:#0B0B0B;--muted:#5C5C58;--card:#FFFFFF;--line:#DAD8D0;--sun:#D81F26;--panel:#0B0B0B;--lf:none;
+  --display:'Barlow Condensed','Arial Narrow',Impact,sans-serif;--body:'Barlow',system-ui,-apple-system,'Segoe UI',sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B0B0B;--ink:#F7F6F2;--muted:#A3A39D;--card:#181818;--line:#2C2C2A;--panel:#171717;--lf:invert(1);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B0B0B;--ink:#F7F6F2;--muted:#A3A39D;--card:#181818;--line:#2C2C2A;--panel:#171717;--lf:invert(1);color-scheme:dark}
+html{scroll-padding-top:70px;scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+img,svg{max-width:100%;display:block}
+a{color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1;font-weight:700;text-transform:uppercase;letter-spacing:.005em}
+.lm,.lw,.abmark,.fl{filter:var(--lf)}
+
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.lm{height:38px;width:auto}.lw{height:15px;width:auto}
+.nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:600;font-size:15px}
+.nav ul a:hover{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px;text-underline-offset:6px}
+.navcall{background:var(--sun);color:#fff;font-weight:700;padding:8px 18px;border-radius:999px;text-decoration:none;font-size:15px;white-space:nowrap}
+.navcall:hover{background:var(--ink);color:var(--bg)}
+@media(max-width:700px){.nav nav{display:none}.lw{height:12px}}
+
+.btn{display:inline-block;background:var(--sun);color:#fff;font:700 16px var(--body);padding:13px 26px;border-radius:999px;text-decoration:none;border:2px solid var(--sun);cursor:pointer}
+.btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+
+.hero{border-bottom:1px solid var(--line)}
+.hgrid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,5vw,72px);align-items:center;padding:clamp(36px,6vw,84px) 0}
+.kicker{font:600 13px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 18px;display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:28px;height:3px;background:var(--sun);flex:none}
+.hero h1{font-size:clamp(48px,7.4vw,100px);line-height:.93}
+.lead{font-size:clamp(18px,2vw,21px);color:var(--muted);max-width:40ch;margin:22px 0 28px}
+.facts{list-style:none;padding:0;margin:36px 0 0;display:flex;flex-wrap:wrap;border-top:1px solid var(--line)}
+.facts li{padding:14px 28px 0 0;font-size:15px;color:var(--muted);line-height:1.3}
+.facts b{display:block;font:700 26px var(--display);color:var(--ink);text-transform:uppercase}
+.hshow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hi{position:relative;display:block;overflow:hidden;border-radius:6px;background:var(--card)}
+.hi img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.hi:hover img{transform:scale(1.04)}
+.h0{grid-row:span 2}.h0 img{object-position:top}
+.h1{aspect-ratio:16/10}.h2{aspect-ratio:1}
+.tag{position:absolute;left:8px;bottom:8px;background:var(--sun);color:#fff;font:700 13px var(--body);padding:3px 10px;border-radius:999px}
+@media(max-width:860px){.hgrid{grid-template-columns:1fr}.hshow{max-width:560px}}
+
+section{padding:clamp(56px,8vw,100px) 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:34px}
+.head h2{font-size:clamp(40px,6vw,76px)}
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.catcard{display:block;text-decoration:none;color:inherit}
+.catcard .art{aspect-ratio:4/3;overflow:hidden;border-radius:6px;background:var(--card)}
+.catcard .art img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .35s}
+.catcard:hover .art img{transform:scale(1.04)}
+.catcard h3{font-size:30px;margin:14px 0 4px}
+.catcard small{color:var(--muted);font-size:15px}
+.back{display:inline-block;font-weight:600;text-decoration:none;margin-bottom:22px;border-bottom:3px solid var(--sun)}
+.grid{columns:3 290px;column-gap:24px}
+.tile{display:block;width:100%;margin-bottom:28px;break-inside:avoid;background:none;border:0;padding:0;text-align:left;color:inherit;cursor:pointer;font:inherit}
+.tile .art{overflow:hidden;border-radius:6px;background:var(--card)}
+.tile .art img{width:100%;height:auto;transition:transform .35s}
+.tile:hover .art img{transform:scale(1.04)}
+.tile h3{font-size:26px;margin:12px 0 4px}
+.tile small{color:var(--muted);font-size:15px}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.pr{background:var(--sun);color:#fff;font:700 18px var(--display);padding:3px 14px;border-radius:999px;text-transform:uppercase}
+
+dialog{border:0;padding:0;background:var(--card);color:var(--ink);border-radius:10px;width:min(920px,94vw);max-height:92vh;overflow:auto}
+dialog::backdrop{background:rgba(0,0,0,.8)}
+.lb{display:grid;grid-template-columns:1fr}
+.lb .art img{width:100%;height:auto;max-height:80vh;object-fit:contain;background:var(--card)}
+.lb .txt{padding:26px 30px 30px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.lb h3{font-size:38px}.lb .txt p{margin:0;max-width:62ch}
+.lb .x{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;border:0;background:var(--sun);color:#fff;font:700 20px var(--body);cursor:pointer}
+
+.services{background:var(--panel);color:#F7F6F2}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));border-top:3px solid var(--sun)}
+.svc div{padding:26px 24px 30px 0}
+.svc h3{font-size:32px;margin-bottom:10px}
+.svc p{margin:0;color:#B9B9B2;font-size:16px}
+
+.about .wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(30px,6vw,80px);align-items:start}
+.abmark{height:110px;width:auto;margin-bottom:24px}
+.about h2{font-size:clamp(40px,6vw,76px)}
+.about p{margin:0 0 16px;max-width:60ch}
+@media(max-width:760px){.about .wrap{grid-template-columns:1fr}}
+
+.contact{background:var(--sun);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,80px)}
+.contact h2{font-size:clamp(44px,7vw,96px)}
+.contact a.big{font:700 clamp(40px,7vw,80px)/1 var(--display);display:block;margin:18px 0 22px;text-underline-offset:6px}
+.contact .btn{background:#0B0B0B;border-color:#0B0B0B;color:#fff;justify-self:start}
+.contact .btn:hover{background:#fff;border-color:#fff;color:#0B0B0B}
+address{font-style:normal;max-width:42ch;margin-top:24px;font-weight:600}
+form{display:grid;gap:14px}
+label{font-weight:600;font-size:15px;display:grid;gap:6px}
+input,textarea{font:400 16px var(--body);padding:13px 14px;border:2px solid #0B0B0B;border-radius:6px;background:#FFFBEA;color:#0B0B0B;width:100%}
+#note{font-weight:600;min-height:1.4em;margin:0}
+@media(max-width:760px){.contact .wrap{grid-template-columns:1fr}}
+footer{padding:26px 0;font-size:15px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.flogo{display:flex;align-items:center;gap:10px}.fl{height:28px;width:auto}
+.float{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:#25D366;color:#0B0B0B;font-weight:700;padding:12px 20px;border-radius:999px;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.3)}
+
+.cats{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:28px}
+.catcard{display:block;text-decoration:none;color:inherit;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--line);transition:transform .3s,box-shadow .3s}
+.catcard:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(0,0,0,.12)}
+.catcard .art{aspect-ratio:16/10;overflow:hidden;background:var(--card);position:relative}
+.catcard .art img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .4s}
+.catcard:hover .art img{transform:scale(1.05)}
+.catcard .body{padding:22px 24px 26px}
+.catcard h3{font-size:30px;margin:0 0 6px}
+.catcard p{color:var(--muted);font-size:15px;margin:10px 0 0;line-height:1.5}
+.back{display:inline-flex;align-items:center;gap:8px;font-weight:700;text-decoration:none;margin-bottom:24px;color:var(--ink);padding:9px 22px;border-radius:999px;border:2px solid var(--line);background:var(--card);transition:all .2s;cursor:pointer}
+.back:hover{background:var(--sun);color:#fff;border-color:var(--sun)}
+.grid{columns:3 290px;column-gap:22px}
+.tile{display:block;width:100%;margin-bottom:22px;break-inside:avoid;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:left;color:inherit;cursor:pointer;font:inherit;transition:transform .25s,box-shadow .25s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.09)}
+.tile .art{overflow:hidden;border-radius:8px;background:var(--bg);position:relative}
+.tile .art img{width:100%;height:auto;display:block;transition:transform .35s}
+.tile:hover .art img{transform:scale(1.04)}
+.tile h3{font-size:20px;margin:12px 0 4px;font-weight:700}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px}
+.meta small{color:var(--muted);font-size:14px}
+.pr{background:var(--sun);color:#fff;font:700 13px var(--body);padding:3px 12px;border-radius:999px;text-transform:uppercase}
+dialog{border:0;padding:0;background:var(--card);color:var(--ink);border-radius:16px;width:min(960px,94vw);max-height:92vh;overflow:auto;box-shadow:0 24px 64px rgba(0,0,0,.45)}
+dialog::backdrop{background:rgba(0,0,0,.85);backdrop-filter:blur(4px)}
+.lb{display:grid;grid-template-columns:1fr;position:relative}
+.lb .art{background:#0B0B0B;display:flex;align-items:center;justify-content:center;min-height:320px;max-height:72vh;overflow:hidden;position:relative}
+.lb .art img{width:100%;height:auto;max-height:72vh;object-fit:contain}
+.lb .txt{padding:26px 30px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.lb h3{font-size:32px;margin:0}
+.lb-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.65);color:#fff;border:0;width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:24px;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:5}
+.lb-nav:hover{background:var(--sun)}
+.lb-prev{left:14px}
+.lb-next{right:14px}
+.lb .x{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;border:0;background:var(--sun);color:#fff;font:700 18px var(--body);cursor:pointer;z-index:10;display:flex;align-items:center;justify-content:center}
+
+/* --- Section: 3-Step Process --- */
+.process{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
+.step-card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:32px 28px;position:relative;transition:transform .3s}
+.step-card:hover{transform:translateY(-4px)}
+.step-num{display:inline-block;font:700 32px var(--display);color:var(--sun);margin-bottom:12px;background:rgba(216,31,38,.08);padding:4px 14px;border-radius:8px}
+.step-card h3{font-size:24px;margin:0 0 10px}
+.step-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.5}
+
+/* --- Section: Printing Setup --- */
+.printing{border-bottom:1px solid var(--line)}
+.print-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,5vw,60px);align-items:center}
+.print-media{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 16px 36px rgba(0,0,0,.08)}
+.print-media img{width:100%;height:auto;display:block}
+.print-badge{position:absolute;bottom:16px;left:16px;background:rgba(11,11,11,.85);backdrop-filter:blur(6px);color:#fff;padding:8px 18px;border-radius:999px;font:700 14px var(--body);border:1px solid rgba(255,255,255,.2);display:flex;align-items:center;gap:8px}
+.print-badge::before{content:"";width:8px;height:8px;border-radius:50%;background:#25D366;display:inline-block}
+.print-feats{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.print-feats li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px}
+.print-feats b{display:block;font:700 18px var(--display);color:var(--ink);margin-bottom:4px;text-transform:uppercase}
+.print-feats p{margin:0;font-size:14px;color:var(--muted);line-height:1.4}
+@media(max-width:860px){.print-grid{grid-template-columns:1fr}.print-feats{grid-template-columns:1fr}}
+
+/* --- Section: Happy Clients / Instagram Video Reviews --- */
+.reviews{background:var(--bg);border-bottom:1px solid var(--line)}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;margin-top:40px}
+.reel-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s}
+.reel-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.12)}
+.reel-art{aspect-ratio:9/14;overflow:hidden;position:relative;background:#000}
+.reel-art img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.reel-card:hover .reel-art img{transform:scale(1.03)}
+.reel-badge{position:absolute;top:16px;left:16px;background:linear-gradient(45deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);color:#fff;font:700 12px var(--body);padding:5px 14px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.reel-body{padding:22px 24px 26px}
+.reel-rating{color:#FFB800;font-size:18px;margin-bottom:8px;display:flex;align-items:center;gap:4px}
+.reel-client{font-weight:700;font-size:18px;margin:0 0 2px;color:var(--ink)}
+.reel-loc{font-size:13px;color:var(--muted);margin-bottom:10px}
+.reel-quote{font-size:15px;color:var(--ink);line-height:1.5;margin:0 0 16px;font-style:italic}
+.reel-actions{display:flex;gap:10px;align-items:center}
+.btn-insta{display:inline-flex;align-items:center;gap:6px;background:transparent;border:2px solid #E1306C;color:#E1306C;font:700 13px var(--body);padding:8px 16px;border-radius:999px;text-decoration:none;transition:all .2s}
+.btn-insta:hover{background:#E1306C;color:#fff}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="logo" href="#top" aria-label="Sangharsh Graphic home"><img class="lm" data-logo="mark" alt=""><img class="lw" data-logo="word" alt="Sangharsh Graphic"></a>
+  <nav aria-label="Main"><ul>
+    <li><a href="#work">Categories</a></li>
+    <li><a href="#process">How to Order</a></li>
+    <li><a href="#printing">Printing Setup</a></li>
+    <li><a href="#reviews">Happy Clients</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul></nav>
+  <a class="navcall" href="tel:+917875685832">Call 78756 85832</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap hgrid">
+  <div class="htxt">
+    <p class="kicker">Graphic design &amp; printing studio · Malegaon Camp, Nashik</p>
+    <h1>Wedding invitations, shop banners &amp; logos</h1>
+    <p class="lead">Send us your details and photos. We design it in Marathi or English and give you a print-ready file or printed delivery.</p>
+    <div class="cta"><a class="btn" href="tel:+917875685832">Call 78756 85832</a><a class="btn ghost" href="https://wa.me/917875685832?text=Hello%20Sangharsh%20Graphics" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+    <ul class="facts"><li><b>From ₹200</b>per design</li><li><b>Marathi + English</b>cards and banners</li><li><b>Print-ready</b>flex &amp; offset press files</li></ul>
+  </div>
+  <div class="hshow" id="hshow"></div>
+</div></div>
+
+<!-- 1. Work by Category -->
+<section id="work"><div class="wrap">
+  <div class="head">
+    <div>
+      <h2>Work by Category</h2>
+      <p style="margin:8px 0 0;color:var(--muted);font-size:17px">Select a category below to explore all showcase designs</p>
+    </div>
+  </div>
+  <div class="cats" id="cats"></div>
+</div></section>
+
+<!-- Category Detail View (Dynamic Gallery) -->
+<section id="catview" hidden><div class="wrap">
+  <a class="back" href="#work">← Back to All Categories</a>
+  <div class="head">
+    <div>
+      <h2 id="cvTitle"></h2>
+      <p id="cvNote" style="margin:8px 0 0;color:var(--muted);font-size:18px"></p>
+    </div>
+    <b class="pr" id="cvCount" style="font-size:15px;padding:6px 16px"></b>
+  </div>
+  <div class="grid" id="grid"></div>
+</div></section>
+
+<!-- 2. How to Order: 3 Simple Steps -->
+<section class="process" id="process"><div class="wrap">
+  <div class="head">
+    <div>
+      <p class="kicker">Fast &amp; hassle-free ordering</p>
+      <h2>How It Works in 3 Easy Steps</h2>
+      <p style="margin:8px 0 0;color:var(--muted);font-size:17px">सोपी ३-स्टेप ऑर्डर पद्धत — WhatsApp वरून थेट डिझाईन मिळवा</p>
+    </div>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card">
+      <span class="step-num">01</span>
+      <h3>Send Photos &amp; Details</h3>
+      <p>Send your shop name, banner size, or bride/groom details with photos directly to <b>+91 78756 85832</b> on WhatsApp.</p>
+    </div>
+    <div class="step-card">
+      <span class="step-num">02</span>
+      <h3>Review Proof &amp; Changes</h3>
+      <p>We send you a sharp preview in Marathi or English within 2–4 hours. Check spelling, fonts, and request changes freely.</p>
+    </div>
+    <div class="step-card">
+      <span class="step-num">03</span>
+      <h3>Print-Ready File &amp; Delivery</h3>
+      <p>Receive your press-ready high-resolution CMYK file or pick up your finished printed flex banner from our Malegaon Camp studio.</p>
+    </div>
+  </div>
+  <div style="margin-top:34px;text-align:center">
+    <a class="btn" href="https://wa.me/917875685832?text=Hello%20Ajay,%20I%20want%20to%20order%20a%20design" target="_blank" rel="noopener">Start Your Order on WhatsApp</a>
+  </div>
+</div></section>
+
+<!-- 3. Printing Machine & In-House Quality Setup -->
+<section class="printing" id="printing"><div class="wrap">
+  <div class="print-grid">
+    <div class="print-media">
+      <img src="assets/printing_machine.jpg" alt="Large Format Digital Flex Printing Machine at Sangharsh Graphics" loading="lazy">
+      <div class="print-badge">SpeedPrint Industrial Digital Flex Press</div>
+    </div>
+    <div>
+      <p class="kicker">In-house printing infrastructure</p>
+      <h2>Heavy-Duty Flex &amp; Sharp Card Printing</h2>
+      <p class="lead" style="margin:16px 0 20px">We don’t just create digital artwork — we ensure your shop banner has rich, eye-catching colors and withstands harsh weather for years.</p>
+      
+      <ul class="print-feats">
+        <li>
+          <b>Sun &amp; Weatherproof</b>
+          <p>High-density solvent inks that do not fade in scorching heat or heavy rain.</p>
+        </li>
+        <li>
+          <b>Star Flex Media</b>
+          <p>Tear-resistant heavy-duty media tailored for shop signboards &amp; gate banners.</p>
+        </li>
+        <li>
+          <b>Exact Frame Sizing</b>
+          <p>Pre-measured with eyelets and border margins for quick iron frame mounting.</p>
+        </li>
+        <li>
+          <b>Same-Day Express</b>
+          <p>Urgent flex printing and WhatsApp digital invitation cards within hours.</p>
+        </li>
+      </ul>
+      <div style="margin-top:28px">
+        <a class="btn" href="tel:+917875685832">Call for Printing Rates</a>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4. Happy Clients & Instagram Video Reviews -->
+<section class="reviews" id="reviews"><div class="wrap">
+  <div class="head">
+    <div>
+      <p class="kicker">Real client stories</p>
+      <h2>Happy Clients &amp; Instagram Reviews</h2>
+      <p style="margin:8px 0 0;color:var(--muted);font-size:17px">आमचे समाधानी ग्राहक — Trusted by 500+ shop owners &amp; families in Malegaon, Nashik &amp; Dhule</p>
+    </div>
+    <a class="btn-insta" href="https://instagram.com" target="_blank" rel="noopener">Follow on Instagram ★</a>
+  </div>
+
+  <div class="reviews-grid">
+    <!-- Reel Review 1: Tailor Shop -->
+    <div class="reel-card">
+      <div class="reel-art">
+        <img src="assets/reel_tailor_review.jpg" alt="Instagram Video Review - Suresh Ladies Boutique Banner" loading="lazy">
+        <span class="reel-badge">Instagram Reel</span>
+      </div>
+      <div class="reel-body">
+        <div class="reel-rating">★★★★★ <span>5.0</span></div>
+        <h4 class="reel-client">Suresh Ladies Boutique</h4>
+        <div class="reel-loc">Malegaon Camp, Nashik</div>
+        <p class="reel-quote">“The banner design for my boutique is super attractive! Vibrant colors, perfect Marathi font and great printing quality. Footfall increased immediately. Ajay is the best!”</p>
+        <div class="reel-actions">
+          <a class="btn-insta" href="https://wa.me/917875685832?text=Hello%20Ajay,%20I%20saw%20the%20Ladies%20Tailor%20banner%20review" target="_blank" rel="noopener">Inquire Like This</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reel Review 2: Wedding Invitation Card -->
+    <div class="reel-card">
+      <div class="reel-art">
+        <img src="assets/reel_patrika_review.jpg" alt="Instagram Video Review - Sneha and Rahul Wedding Card" loading="lazy">
+        <span class="reel-badge">Instagram Reel</span>
+      </div>
+      <div class="reel-body">
+        <div class="reel-rating">★★★★★ <span>5.0</span></div>
+        <h4 class="reel-client">Sneha &amp; Rahul</h4>
+        <div class="reel-loc">Nashik (Lagna Patrika)</div>
+        <p class="reel-quote">“We got our Marathi Lagna Patrika designed here. The Ganesh motif, family details, and paper finish were so elegant. All our relatives appreciated the card!”</p>
+        <div class="reel-actions">
+          <a class="btn-insta" href="https://wa.me/917875685832?text=Hello%20Ajay,%20I%20saw%20the%20Lagna%20Patrika%20card%20review" target="_blank" rel="noopener">Inquire Like This</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5. What I Design (Services) -->
+<section class="services" id="services"><div class="wrap">
+  <div class="head"><h2>What I design</h2></div>
+  <div class="svc">
+    <div><h3>Wedding invitations</h3><p>Marathi and English cards for print and WhatsApp, with photos, family details and venue.</p></div>
+    <div><h3>Shop banners &amp; boards</h3><p>Shop signs, gate banners and sale posters, sized and ready for the flex press.</p></div>
+    <div><h3>Logo &amp; branding</h3><p>A logo and look that work on a signboard and a phone screen alike.</p></div>
+    <div><h3>Social media</h3><p>Post and story designs for offers, festivals and launches.</p></div>
+  </div>
+</div></section>
+
+<!-- 6. About Section -->
+<section class="about" id="about"><div class="wrap">
+  <div><img class="abmark" data-logo="mark" alt="Sangharsh Graphic logo"><h2>Design with some fight in it</h2></div>
+  <div>
+    <p>“Sangharsh” means struggle, and every shop and every family event wants to be noticed. Sangharsh Graphics is a design studio in Malegaon Camp, Nashik, run by Ajay Shewale.</p>
+    <p>You deal directly with Ajay, not a middleman. Bring your photos and details, and you get a clear design in Marathi or English, ready to print or share on WhatsApp.</p>
+  </div>
+</div></section>
+
+<!-- 7. Contact Section -->
+<section class="contact" id="contact"><div class="wrap">
+  <div>
+    <h2>Need a design? Call now.</h2>
+    <a class="big" href="tel:+917875685832">+91 78756 85832</a>
+    <div class="cta"><a class="btn" href="tel:+917875685832">Call Ajay</a><a class="btn" href="https://wa.me/917875685832?text=Hello%20Sangharsh%20Graphics" target="_blank" rel="noopener">Chat on WhatsApp</a></div>
+    <address>Ajay Shewale<br>Jahagirdar Plaza, Shop No. 2, near Malegaon Generic Medical, below Moka Moment Café, Malegaon Camp (Nashik)</address>
+  </div>
+  <form id="form">
+    <label>Your name<input name="n" required autocomplete="name"></label>
+    <label>What do you need designed?<textarea name="m" rows="4" required placeholder="Wedding invitation, shop banner, logo…"></textarea></label>
+    <button class="btn" type="submit">Send on WhatsApp</button>
+    <p id="note" role="status"></p>
+  </form>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span class="flogo"><img class="fl" data-logo="mark" alt=""><span>© 2026 Sangharsh Graphic</span></span><span>Malegaon Camp, Nashik · +91 78756 85832</span></div></footer>
+
+<a class="float" href="https://wa.me/917875685832?text=Hello%20Sangharsh%20Graphics" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
+
+<dialog id="dlg" aria-label="Project details">
+  <button class="x" id="close" aria-label="Close">✕</button>
+  <div class="lb">
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">‹</button>
+    <div class="art" id="lbArt"></div>
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">›</button>
+    <div class="txt">
+      <small id="lbCat" style="color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em"></small>
+      <h3 id="lbTitle"></h3>
+      <b class="pr" id="lbPrice"></b>
+      <p id="lbDesc"></p>
+      <div class="lb-actions">
+        <a class="btn" id="lbWaBtn" href="" target="_blank" rel="noopener">Order on WhatsApp</a>
+        <a class="btn ghost" href="tel:+917875685832">Call Ajay</a>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+var WORKS = [
+ {
+  "t": "120 x 30 1",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (120 x 30 1)",
+  "img": "Ladies Tailor/120 x 30 -1.jpg",
+  "thumb": "thumbnails/Ladies Tailor/120 x 30 -1.jpg"
+ },
+ {
+  "t": "2 x 3 1",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (2 x 3 1)",
+  "img": "Ladies Tailor/2 X 3 -1.jpg",
+  "thumb": "thumbnails/Ladies Tailor/2 X 3 -1.jpg"
+ },
+ {
+  "t": "2 x 3 Mrunali",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (2 x 3 Mrunali)",
+  "img": "Ladies Tailor/2 X 3 =Mrunali.jpg",
+  "thumb": "thumbnails/Ladies Tailor/2 X 3 =Mrunali.jpg"
+ },
+ {
+  "t": "3 x 2 Amol Sonawane",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (3 x 2 Amol Sonawane)",
+  "img": "Ladies Tailor/3 X 2 -amol sonawane.jpg",
+  "thumb": "thumbnails/Ladies Tailor/3 X 2 -amol sonawane.jpg"
+ },
+ {
+  "t": "3 x 3 Dikshitaa",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (3 x 3 Dikshitaa)",
+  "img": "Ladies Tailor/3 X 3 -DIKSHITAA.jpg",
+  "thumb": "thumbnails/Ladies Tailor/3 X 3 -DIKSHITAA.jpg"
+ },
+ {
+  "t": "3 x 4 111",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (3 x 4 111)",
+  "img": "Ladies Tailor/3 X 4 -111.jpg",
+  "thumb": "thumbnails/Ladies Tailor/3 X 4 -111.jpg"
+ },
+ {
+  "t": "3 x 2 Kanchan Tailor",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (3 x 2 Kanchan Tailor)",
+  "img": "Ladies Tailor/3 x 2 -KANCHAN TRALOR.jpg",
+  "thumb": "thumbnails/Ladies Tailor/3 x 2 -KANCHAN TRALOR.jpg"
+ },
+ {
+  "t": "3 x 3 1",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (3 x 3 1)",
+  "img": "Ladies Tailor/3 x 3 -1.jpg",
+  "thumb": "thumbnails/Ladies Tailor/3 x 3 -1.jpg"
+ },
+ {
+  "t": "4 x 2 Osaka",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (4 x 2 Osaka)",
+  "img": "Ladies Tailor/4 X 2 -Osaka.jpg",
+  "thumb": "thumbnails/Ladies Tailor/4 X 2 -Osaka.jpg"
+ },
+ {
+  "t": "48 x 30 1",
+  "cat": "Ladies Tailor",
+  "price": "₹200",
+  "d": "Ladies Tailor Shop Banner & Board design (48 x 30 1)",
+  "img": "Ladies Tailor/48 x 30 -1.jpg",
+  "thumb": "thumbnails/Ladies Tailor/48 x 30 -1.jpg"
+ },
+ {
+  "t": "Aakash & Sunyana",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Aakash & Sunyana)",
+  "img": "Patrika/Aakash-&-Sunyana.jpg",
+  "thumb": "thumbnails/Patrika/Aakash-&-Sunyana.jpg"
+ },
+ {
+  "t": "Amol & Sakshi 1",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Amol & Sakshi 1)",
+  "img": "Patrika/Amol-&-Sakshi-01.jpg",
+  "thumb": "thumbnails/Patrika/Amol-&-Sakshi-01.jpg"
+ },
+ {
+  "t": "Arjun & Radha",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Arjun & Radha)",
+  "img": "Patrika/Arjun-&-Radha.jpg",
+  "thumb": "thumbnails/Patrika/Arjun-&-Radha.jpg"
+ },
+ {
+  "t": "Bhushan & Neha",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Bhushan & Neha)",
+  "img": "Patrika/Bhushan-&-Neha.jpg",
+  "thumb": "thumbnails/Patrika/Bhushan-&-Neha.jpg"
+ },
+ {
+  "t": "Card",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Card)",
+  "img": "Patrika/CARD.jpg",
+  "thumb": "thumbnails/Patrika/CARD.jpg"
+ },
+ {
+  "t": "Darshan & Rupali",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Darshan & Rupali)",
+  "img": "Patrika/Darshan-&-Rupali.jpg",
+  "thumb": "thumbnails/Patrika/Darshan-&-Rupali.jpg"
+ },
+ {
+  "t": "Darshan Divtya Budlya",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Darshan Divtya Budlya)",
+  "img": "Patrika/Darshan-Divtya-budlya.jpg",
+  "thumb": "thumbnails/Patrika/Darshan-Divtya-budlya.jpg"
+ },
+ {
+  "t": "Dhanjay & Vasumati",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Dhanjay & Vasumati)",
+  "img": "Patrika/Dhanjay-&-Vasumati.jpg",
+  "thumb": "thumbnails/Patrika/Dhanjay-&-Vasumati.jpg"
+ },
+ {
+  "t": "Dhanshree & Kuldip",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Dhanshree & Kuldip)",
+  "img": "Patrika/Dhanshree-&-Kuldip.jpg",
+  "thumb": "thumbnails/Patrika/Dhanshree-&-Kuldip.jpg"
+ },
+ {
+  "t": "Durga & Subhash",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Durga & Subhash)",
+  "img": "Patrika/Durga-&-subhash.jpg",
+  "thumb": "thumbnails/Patrika/Durga-&-subhash.jpg"
+ },
+ {
+  "t": "Harshad & Sandip",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Harshad & Sandip)",
+  "img": "Patrika/Harshad-&-Sandip.jpg",
+  "thumb": "thumbnails/Patrika/Harshad-&-Sandip.jpg"
+ },
+ {
+  "t": "Ishawari & Khushal",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Ishawari & Khushal)",
+  "img": "Patrika/Ishawari-&-Khushal.jpg",
+  "thumb": "thumbnails/Patrika/Ishawari-&-Khushal.jpg"
+ },
+ {
+  "t": "Jayesh & Vijayta",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Jayesh & Vijayta)",
+  "img": "Patrika/Jayesh-&-VIjayta.jpg",
+  "thumb": "thumbnails/Patrika/Jayesh-&-VIjayta.jpg"
+ },
+ {
+  "t": "Kavita & Samadhan",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Kavita & Samadhan)",
+  "img": "Patrika/Kavita-&-samadhan.jpg",
+  "thumb": "thumbnails/Patrika/Kavita-&-samadhan.jpg"
+ },
+ {
+  "t": "Mandav Patrika",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Mandav Patrika)",
+  "img": "Patrika/Mandav-Patrika.jpg",
+  "thumb": "thumbnails/Patrika/Mandav-Patrika.jpg"
+ },
+ {
+  "t": "Mansi & Roshan",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Mansi & Roshan)",
+  "img": "Patrika/Mansi-&-Roshan.jpg",
+  "thumb": "thumbnails/Patrika/Mansi-&-Roshan.jpg"
+ },
+ {
+  "t": "Mehandi Card Woman",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Mehandi Card Woman)",
+  "img": "Patrika/Mehandi-Card-Woman.jpg",
+  "thumb": "thumbnails/Patrika/Mehandi-Card-Woman.jpg"
+ },
+ {
+  "t": "Mehandi Card",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Mehandi Card)",
+  "img": "Patrika/Mehandi-Card.jpg",
+  "thumb": "thumbnails/Patrika/Mehandi-Card.jpg"
+ },
+ {
+  "t": "Pankaj & Roshani",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pankaj & Roshani)",
+  "img": "Patrika/Pankaj-&-Roshani.jpg",
+  "thumb": "thumbnails/Patrika/Pankaj-&-Roshani.jpg"
+ },
+ {
+  "t": "Prakash Dalvi",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Prakash Dalvi)",
+  "img": "Patrika/Prakash-Dalvi.jpg",
+  "thumb": "thumbnails/Patrika/Prakash-Dalvi.jpg"
+ },
+ {
+  "t": "Pratik & Nikita",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pratik & Nikita)",
+  "img": "Patrika/Pratik-&-Nikita.jpg",
+  "thumb": "thumbnails/Patrika/Pratik-&-Nikita.jpg"
+ },
+ {
+  "t": "Pratiksha & Mayur",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pratiksha & Mayur)",
+  "img": "Patrika/Pratiksha-&-Mayur.jpg",
+  "thumb": "thumbnails/Patrika/Pratiksha-&-Mayur.jpg"
+ },
+ {
+  "t": "Pravin & Monali",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pravin & Monali)",
+  "img": "Patrika/Pravin-&-Monali.jpg",
+  "thumb": "thumbnails/Patrika/Pravin-&-Monali.jpg"
+ },
+ {
+  "t": "Pritam & Gaytri",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pritam & Gaytri)",
+  "img": "Patrika/Pritam-&-Gaytri.jpg",
+  "thumb": "thumbnails/Patrika/Pritam-&-Gaytri.jpg"
+ },
+ {
+  "t": "Priyanka & Aadesh",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Priyanka & Aadesh)",
+  "img": "Patrika/Priyanka-&-Aadesh.jpg",
+  "thumb": "thumbnails/Patrika/Priyanka-&-Aadesh.jpg"
+ },
+ {
+  "t": "Priynka & Rahul",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Priynka & Rahul)",
+  "img": "Patrika/Priynka-&-Rahul.jpg",
+  "thumb": "thumbnails/Patrika/Priynka-&-Rahul.jpg"
+ },
+ {
+  "t": "Rahul & Komal",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Rahul & Komal)",
+  "img": "Patrika/Rahul-&-komal.jpg",
+  "thumb": "thumbnails/Patrika/Rahul-&-komal.jpg"
+ },
+ {
+  "t": "Ritika & Shubham",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Ritika & Shubham)",
+  "img": "Patrika/Ritika-&-Shubham.jpg",
+  "thumb": "thumbnails/Patrika/Ritika-&-Shubham.jpg"
+ },
+ {
+  "t": "Rohit & Kalyani",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Rohit & Kalyani)",
+  "img": "Patrika/Rohit-&-kalyani.jpg",
+  "thumb": "thumbnails/Patrika/Rohit-&-kalyani.jpg"
+ },
+ {
+  "t": "Rushali & Kunal",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Rushali & Kunal)",
+  "img": "Patrika/Rushali-&-Kunal.jpg",
+  "thumb": "thumbnails/Patrika/Rushali-&-Kunal.jpg"
+ },
+ {
+  "t": "Shakul & Nayna",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Shakul & Nayna)",
+  "img": "Patrika/Shakul-&-Nayna.jpg",
+  "thumb": "thumbnails/Patrika/Shakul-&-Nayna.jpg"
+ },
+ {
+  "t": "Shubham & Ashmita",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Shubham & Ashmita)",
+  "img": "Patrika/Shubham-&-Ashmita.jpg",
+  "thumb": "thumbnails/Patrika/Shubham-&-Ashmita.jpg"
+ },
+ {
+  "t": "Shubham & Pooja 1",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Shubham & Pooja 1)",
+  "img": "Patrika/Shubham-&-Pooja-=1.jpg",
+  "thumb": "thumbnails/Patrika/Shubham-&-Pooja-=1.jpg"
+ },
+ {
+  "t": "Tokade Privar Astane Mandav Haldi",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Tokade Privar Astane Mandav Haldi)",
+  "img": "Patrika/Tokade-Privar-Astane--Mandav-Haldi.jpg",
+  "thumb": "thumbnails/Patrika/Tokade-Privar-Astane--Mandav-Haldi.jpg"
+ },
+ {
+  "t": "Amol & Kajal",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Amol & Kajal)",
+  "img": "Patrika/amol-&-kajal.jpg",
+  "thumb": "thumbnails/Patrika/amol-&-kajal.jpg"
+ },
+ {
+  "t": "Amol & Lalita",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Amol & Lalita)",
+  "img": "Patrika/amol-&-lalita.jpg",
+  "thumb": "thumbnails/Patrika/amol-&-lalita.jpg"
+ },
+ {
+  "t": "Amol & Mansi",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Amol & Mansi)",
+  "img": "Patrika/amol-&-mansi.jpg",
+  "thumb": "thumbnails/Patrika/amol-&-mansi.jpg"
+ },
+ {
+  "t": "Badal & Aarti",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Badal & Aarti)",
+  "img": "Patrika/badal-&-Aarti.jpg",
+  "thumb": "thumbnails/Patrika/badal-&-Aarti.jpg"
+ },
+ {
+  "t": "Dasharth Deore",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Dasharth Deore)",
+  "img": "Patrika/dasharth-Deore.jpg",
+  "thumb": "thumbnails/Patrika/dasharth-Deore.jpg"
+ },
+ {
+  "t": "Gaurav & Kaveri01",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Gaurav & Kaveri01)",
+  "img": "Patrika/gaurav-&-kaveri01.jpg",
+  "thumb": "thumbnails/Patrika/gaurav-&-kaveri01.jpg"
+ },
+ {
+  "t": "Harshal & Jayshree02",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Harshal & Jayshree02)",
+  "img": "Patrika/harshal-&-jayshree02.jpg",
+  "thumb": "thumbnails/Patrika/harshal-&-jayshree02.jpg"
+ },
+ {
+  "t": "Harshda & Devesh 33",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Harshda & Devesh 33)",
+  "img": "Patrika/harshda-&-devesh-33.jpg",
+  "thumb": "thumbnails/Patrika/harshda-&-devesh-33.jpg"
+ },
+ {
+  "t": "Jayesh & Gayatri",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Jayesh & Gayatri)",
+  "img": "Patrika/jayesh-&-Gayatri.jpg",
+  "thumb": "thumbnails/Patrika/jayesh-&-Gayatri.jpg"
+ },
+ {
+  "t": "Jayshree & Kunal 1",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Jayshree & Kunal 1)",
+  "img": "Patrika/jayshree-&-kunal-1.jpg",
+  "thumb": "thumbnails/Patrika/jayshree-&-kunal-1.jpg"
+ },
+ {
+  "t": "Jayshree & Shidharth",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Jayshree & Shidharth)",
+  "img": "Patrika/jayshree-&-shidharth.jpg",
+  "thumb": "thumbnails/Patrika/jayshree-&-shidharth.jpg"
+ },
+ {
+  "t": "Kaveri & Sachin",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Kaveri & Sachin)",
+  "img": "Patrika/kaveri-&-Sachin.jpg",
+  "thumb": "thumbnails/Patrika/kaveri-&-Sachin.jpg"
+ },
+ {
+  "t": "Kunal & Minakshi English Card",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Kunal & Minakshi English Card)",
+  "img": "Patrika/kunal-&-Minakshi-English-Card.jpg",
+  "thumb": "thumbnails/Patrika/kunal-&-Minakshi-English-Card.jpg"
+ },
+ {
+  "t": "Madav New Design",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Madav New Design)",
+  "img": "Patrika/madav-new-design.jpg",
+  "thumb": "thumbnails/Patrika/madav-new-design.jpg"
+ },
+ {
+  "t": "New Design",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (New Design)",
+  "img": "Patrika/new-design.jpg",
+  "thumb": "thumbnails/Patrika/new-design.jpg"
+ },
+ {
+  "t": "Pooja & Prasad",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pooja & Prasad)",
+  "img": "Patrika/pooja-&-Prasad.jpg",
+  "thumb": "thumbnails/Patrika/pooja-&-Prasad.jpg"
+ },
+ {
+  "t": "Pooja & Jagdish 2",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pooja & Jagdish 2)",
+  "img": "Patrika/pooja-&-jagdish-2.jpg",
+  "thumb": "thumbnails/Patrika/pooja-&-jagdish-2.jpg"
+ },
+ {
+  "t": "Pooja & Jagdish",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pooja & Jagdish)",
+  "img": "Patrika/pooja-&-jagdish.jpg",
+  "thumb": "thumbnails/Patrika/pooja-&-jagdish.jpg"
+ },
+ {
+  "t": "Pratiksha & Sachin",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pratiksha & Sachin)",
+  "img": "Patrika/pratiksha-&-Sachin.jpg",
+  "thumb": "thumbnails/Patrika/pratiksha-&-Sachin.jpg"
+ },
+ {
+  "t": "Pravin & Aparna 2",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pravin & Aparna 2)",
+  "img": "Patrika/pravin-&-aparna-02.jpg",
+  "thumb": "thumbnails/Patrika/pravin-&-aparna-02.jpg"
+ },
+ {
+  "t": "Pritam & Jayshree",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Pritam & Jayshree)",
+  "img": "Patrika/pritam-&-jayshree.jpg",
+  "thumb": "thumbnails/Patrika/pritam-&-jayshree.jpg"
+ },
+ {
+  "t": "Prshant Patil Cm",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Prshant Patil Cm)",
+  "img": "Patrika/prshant-patil-cm.jpg",
+  "thumb": "thumbnails/Patrika/prshant-patil-cm.jpg"
+ },
+ {
+  "t": "Shubhangi & Devashiash",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Shubhangi & Devashiash)",
+  "img": "Patrika/shubhangi-&-devashiash.jpg",
+  "thumb": "thumbnails/Patrika/shubhangi-&-devashiash.jpg"
+ },
+ {
+  "t": "Suvarna & Ramesh",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Suvarna & Ramesh)",
+  "img": "Patrika/suvarna-&-ramesh.jpg",
+  "thumb": "thumbnails/Patrika/suvarna-&-ramesh.jpg"
+ },
+ {
+  "t": "Vishal & Pooja",
+  "cat": "Patrika",
+  "price": "₹200",
+  "d": "Lagna Patrika / Wedding Card design (Vishal & Pooja)",
+  "img": "Patrika/vishal-&-pooja.jpg",
+  "thumb": "thumbnails/Patrika/vishal-&-pooja.jpg"
+ }
+];
+
+var CATS = [
+  {
+    k: 'ladies-tailor',
+    cat: 'Ladies Tailor',
+    name: 'Ladies Tailor',
+    sub: 'Shop Banners & Boards',
+    note: 'Custom banners, flex boards and shop signage designed for ladies tailors and boutiques.',
+    cover: 'Ladies Tailor/4 X 2 -Osaka.jpg',
+    thumbCover: 'thumbnails/Ladies Tailor/4 X 2 -Osaka.jpg'
+  },
+  {
+    k: 'patrika',
+    cat: 'Patrika',
+    name: 'Lagna Patrika',
+    sub: 'Wedding & Invitation Cards',
+    note: 'Traditional & modern wedding invitations, Mandav patrika and Mehandi cards in Marathi & English.',
+    cover: 'Patrika/Mandav-Patrika.jpg',
+    thumbCover: 'thumbnails/Patrika/Mandav-Patrika.jpg'
+  }
+];
+
+function media(w, useThumb){
+  var s = (useThumb && w.thumb) ? w.thumb : w.img;
+  return '<img src="' + encodeURI(s) + '" alt="' + w.t + '" loading="lazy" onerror="this.onerror=null;this.src=\'' + encodeURI(w.img) + '\';">';
+}
+
+var grid = document.getElementById('grid');
+var dlg = document.getElementById('dlg');
+var currentFilteredWorks = [];
+var currentModalIndex = 0;
+
+function render(cat){
+  grid.innerHTML = '';
+  currentFilteredWorks = WORKS.filter(function(w){
+    return w.cat === cat;
+  });
+
+  currentFilteredWorks.forEach(function(w, idx){
+    var b = document.createElement('button');
+    b.className = 'tile';
+    b.setAttribute('aria-label', 'Open ' + w.t);
+    b.innerHTML = '<div class="art">' + media(w, true) + '</div>' +
+                  '<h3>' + w.t + '</h3>' +
+                  '<div class="meta"><small>' + w.cat + '</small><b class="pr">' + w.price + '</b></div>';
+    b.onclick = function(){ openModal(idx); };
+    grid.appendChild(b);
+  });
+}
+
+var cg = document.getElementById('cats');
+var cv = document.getElementById('catview');
+
+CATS.forEach(function(c){
+  var list = WORKS.filter(function(w){ return w.cat === c.cat; });
+  var card = document.createElement('a');
+  card.className = 'catcard';
+  card.href = '#' + c.k;
+  
+  var coverWork = {
+    t: c.name,
+    img: c.cover,
+    thumb: c.thumbCover
+  };
+
+  card.innerHTML = '<div class="art">' + media(coverWork, true) + '</div>' +
+                   '<div class="body">' +
+                     '<div class="meta"><h3>' + c.name + '</h3><b class="pr">' + list.length + ' Designs</b></div>' +
+                     '<p>' + c.note + '</p>' +
+                   '</div>';
+  cg.appendChild(card);
+});
+
+var HOME_SECTIONS = ['work', 'process', 'printing', 'reviews', 'services', 'about'];
+
+function route(){
+  var h = location.hash.slice(1);
+  var c = CATS.filter(function(x){ return x.k === h; })[0];
+  var isCategoryView = !!c;
+
+  HOME_SECTIONS.forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.hidden = isCategoryView;
+  });
+  
+  var heroEl = document.querySelector('.hero');
+  if(heroEl) heroEl.hidden = isCategoryView;
+  
+  cv.hidden = !isCategoryView;
+
+  if(c){
+    document.getElementById('cvTitle').textContent = c.name;
+    document.getElementById('cvNote').textContent = c.note;
+    document.getElementById('cvCount').textContent = listCount(c.cat) + ' Designs';
+    render(c.cat);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  } else {
+    if(h && h !== 'work'){
+      var target = document.getElementById(h);
+      if(target) target.scrollIntoView({behavior: 'smooth'});
+    } else {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+  }
+}
+
+function listCount(cat){
+  return WORKS.filter(function(w){ return w.cat === cat; }).length;
+}
+
+window.addEventListener('hashchange', route);
+
+function openModal(idx){
+  currentModalIndex = idx;
+  var w = currentFilteredWorks[idx];
+  if(!w) return;
+
+  document.getElementById('lbArt').innerHTML = media(w, false);
+  document.getElementById('lbCat').textContent = w.cat;
+  document.getElementById('lbTitle').textContent = w.t;
+  document.getElementById('lbPrice').textContent = 'Starting at ' + w.price;
+  document.getElementById('lbDesc').textContent = w.d;
+
+  var waMsg = 'Hello Ajay, I am interested in this design: ' + w.t + ' (' + w.cat + ').';
+  document.getElementById('lbWaBtn').href = 'https://wa.me/917875685832?text=' + encodeURIComponent(waMsg);
+
+  dlg.showModal();
+}
+
+document.getElementById('lbPrev').onclick = function(e){
+  e.stopPropagation();
+  if(currentFilteredWorks.length === 0) return;
+  var newIdx = (currentModalIndex - 1 + currentFilteredWorks.length) % currentFilteredWorks.length;
+  openModal(newIdx);
+};
+
+document.getElementById('lbNext').onclick = function(e){
+  e.stopPropagation();
+  if(currentFilteredWorks.length === 0) return;
+  var newIdx = (currentModalIndex + 1) % currentFilteredWorks.length;
+  openModal(newIdx);
+};
+
+document.addEventListener('keydown', function(e){
+  if(!dlg.open) return;
+  if(e.key === 'ArrowLeft') document.getElementById('lbPrev').click();
+  if(e.key === 'ArrowRight') document.getElementById('lbNext').click();
+});
+
+document.getElementById('close').onclick = function(){ dlg.close(); };
+dlg.addEventListener('click', function(e){ if(e.target === dlg) dlg.close(); });
+
+document.getElementById('form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var f = e.target;
+  var msg = 'Hello Sangharsh Graphics, I am ' + f.n.value + '.\n' + f.m.value;
+  window.open('https://wa.me/917875685832?text=' + encodeURIComponent(msg), '_blank');
+  document.getElementById('note').textContent = 'Opening WhatsApp with your message.';
+});
+
+var LOGO={mark:"data:image/png;base64,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",word:"data:image/png;base64,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"};
+document.querySelectorAll('[data-logo]').forEach(function(i){
+  var key = i.getAttribute('data-logo');
+  if(LOGO[key]) i.src = LOGO[key];
+});
+
+// Hero featured items
+var hs = document.getElementById('hshow');
+var heroItems = [
+  { t: 'Mandav Patrika', img: 'Patrika/Mandav-Patrika.jpg', thumb: 'thumbnails/Patrika/Mandav-Patrika.jpg', tag: 'Patrika', k: 'patrika', cls: 'hi h0' },
+  { t: 'Osaka Ladies Tailor', img: 'Ladies Tailor/4 X 2 -Osaka.jpg', thumb: 'thumbnails/Ladies Tailor/4 X 2 -Osaka.jpg', tag: 'Banner', k: 'ladies-tailor', cls: 'hi h1' },
+  { t: 'Ladies Tailor Flex', img: 'Ladies Tailor/3 X 4 -111.jpg', thumb: 'thumbnails/Ladies Tailor/3 X 4 -111.jpg', tag: 'Banner', k: 'ladies-tailor', cls: 'hi h2' }
+];
+
+heroItems.forEach(function(item){
+  var a = document.createElement('a');
+  a.className = item.cls;
+  a.href = '#' + item.k;
+  a.innerHTML = media(item, true) + '<span class="tag">' + item.tag + '</span>';
+  hs.appendChild(a);
+});
+
+route();
+</script>
+</body>
+</html>
